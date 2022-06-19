@@ -1,5 +1,5 @@
 import './style.css'
-import { isArray } from '../lib/main';
+import { isArray } from '../package/main';
 
 console.log(isArray([]));
 

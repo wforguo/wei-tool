@@ -14,7 +14,7 @@ export default defineConfig({
   // 打包配置
   build: {
     lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'package/main.ts'),
       name: 'wei-tool',
       fileName: (format) => `wei-tool.${format}.js`
     },

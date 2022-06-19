@@ -20,14 +20,14 @@
    * *   '[object Undefined]'
    * *   其他
    */
-     const toTypeString = (val) => { 
+     const toTypeString = (val: any) => {
       return Object.prototype.toString.call(val)
     }
-    
+
     /**
      * 获取具体类型
      * @param {*} val 要验证的实例
-     * @returns 
+     * @returns
      * *   'function',
      * *   'async',
      * *   'object',
@@ -46,126 +46,123 @@
      * *   'undefined'
      * *   其他
      */
-    const typeName = (val) => {
+    const typeName = (val: any) => {
       return Object.prototype.toString.call(val).replace(/^\[object (\S+)\]$/,'$1').toLowerCase()
     }
-  
+
     const hasOwnProperty = Object.prototype.hasOwnProperty
-    const hasOwn = (val, key) => hasOwnProperty.call(val, key)
-  
+    const hasOwn = (val: any, key: any) => hasOwnProperty.call(val, key)
+
     /**
      *  验证普通函数
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isFunction = (val) => toTypeString(val) === '[object Function]'
-  
+    const isFunction = (val: any) => toTypeString(val) === '[object Function]'
+
     /**
      * 验证 async 的函数
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isAsync = (val) => toTypeString(val) === '[object asyncFunction]'
-   
+    const isAsync = (val: any) => toTypeString(val) === '[object asyncFunction]'
+
     /**
      * 验证 Object，不含 null
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isObject = (val) => val !== null && typeof val === 'object'
-   
+    const isObject = (val: any) => val !== null && typeof val === 'object'
+
     /**
      *  验证数组
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
      const isArray = Array.isArray
-   
+
      /**
      * 验证字符串
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isString = (val) => typeof val === 'string'
-   
+    const isString = (val: any) => typeof val === 'string'
+
     /**
      * 验证 number
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-   
-    const isNumber = (val) => typeof val === 'number'
-   
+
+    const isNumber = (val: any) => typeof val === 'number'
+
     /**
      * 验证 BigInt
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isBigInt = (val) => typeof val === 'bigint'
-   
+    const isBigInt = (val: any) => typeof val === 'bigint'
+
     /**
      * 验证 boolean
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-     const isBoolean = (val) => typeof val === 'boolean'
-   
+     const isBoolean = (val: any) => typeof val === 'boolean'
+
      /**
      * 验证正则类型
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isRegExp = (val) => toTypeString(val) === '[object RegExp]'
+    const isRegExp = (val: any) => toTypeString(val) === '[object RegExp]'
     /**
      * 验证日期
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isDate = (val) => val instanceof Date
-  
+    const isDate = (val: any) => val instanceof Date
+
     /**
      * 验证 map
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isMap = (val) => toTypeString(val) === '[object Map]'
+    const isMap = (val: any) => toTypeString(val) === '[object Map]'
     /**
      * 验证 set
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isSet = (val) => toTypeString(val) === '[object Set]'
+    const isSet = (val: any) => toTypeString(val) === '[object Set]'
     /**
      *  验证 Promise
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isPromise = (val) => toTypeString(val) === '[object Promise]'
+    const isPromise = (val: any) => toTypeString(val) === '[object Promise]'
     /**
      * 验证 Symbol
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isSymbol = (val) => typeof val === 'symbol'
-  
+    const isSymbol = (val: any) => typeof val === 'symbol'
+
     /**
      * null 或者 undefined 返回 true
      * @param {*} val 要验证的对象
-     * @returns 
+     * @returns
      */
-    const isNullOrUndefined = (val) => {
+    const isNullOrUndefined = (val: any) => {
       if (val === null) return true
-      if (typeof val === 'undefined') return true
-      return false
+      return typeof val === 'undefined';
     }
 
   export {
     toTypeString, // Object.prototype.toString.call(val)
     typeName, // 获取可以识别的名称
-  
     hasOwnProperty,
     hasOwn,
-  
     isFunction, // 验证普通函数
     isAsync, // 验证 async 的函数
     isObject, // 验证 Object
@@ -180,6 +177,5 @@
     isSet, // 验证 set
     isPromise, // 验证 Promise
     isSymbol, // 验证 Symbol
-   
     isNullOrUndefined // null 或者 undefined 返回 true
   }
