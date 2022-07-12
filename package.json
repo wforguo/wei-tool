@@ -1,32 +1,36 @@
 {
-  "name": "@wei/tool",
-  "private": false,
-  "version": "1.0.1",
-  "description": "wei-tool",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/wei-tool.umd.js",
-  "module": "./dist/wei-tool.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/wei-tool.es.js",
-      "require": "./dist/wei-tool.umd.js"
+    "name": "wei-tool",
+    "private": false,
+    "version": "1.0.1",
+    "description": "wei-tool",
+    "keywords": [
+        "wei-tool"
+    ],
+    "files": [
+        "lib"
+    ],
+    "main": "./lib/wei-tool.umd.js",
+    "module": "./lib/wei-tool.es.js",
+    "exports": {
+        ".": {
+            "import": "./lib/wei-tool.es.js",
+            "require": "./lib/wei-tool.umd.js"
+        }
+    },
+    "license": "MIT",
+    "auther": "forguo forguo@qq.com",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.2.37"
+    },
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@vitejs/plugin-vue": "^2.3.3",
+        "typescript": "^4.5.4",
+        "vite": "^2.9.9"
     }
-  },
-  "license": "MIT",
-  "auther": "forguo forguo@qq.com",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.2.37"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^2.3.3",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9"
-  }
 }
