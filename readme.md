@@ -13,3 +13,10 @@ npm config set registry=https://forguo.cn/npm/
 ```
 registry=https://forguo.cn/npm/
 ```
+
+### 引入
+
+```yaml
+import { isArray } from 'wei-tool';
+isArray([1, 2, 3]);
+```
