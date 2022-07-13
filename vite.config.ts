@@ -15,7 +15,14 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     },
-    // 打包配置
+    /**
+     * @desc 打包配置
+     * 对代码进行两份格式打包: commonjs 与 es module
+     * "main": "./lib/wei-tool.umd.js",
+     * "module": "./lib/wei-tool.es.js",
+     * package中[main] 字段作为 commonjs 入口
+     * package中[module] 字段作为 es module 入口
+     */
     build: {
         lib: {
             entry: resolve(__dirname, 'package/main.ts'),

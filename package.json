@@ -3,12 +3,14 @@
     "private": false,
     "version": "1.0.2",
     "description": "wei-tool",
+    "license": "MIT",
+    "auther": "forguo forguo@qq.com",
     "keywords": [
         "wei-tool",
         "js-tool"
     ],
     "files": [
-        "lib"
+        "lib/*"
     ],
     "main": "./lib/wei-tool.umd.js",
     "module": "./lib/wei-tool.es.js",
@@ -18,8 +20,6 @@
             "require": "./lib/wei-tool.umd.js"
         }
     },
-    "license": "MIT",
-    "auther": "forguo forguo@qq.com",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
@@ -51,5 +51,8 @@
         "commitizen": {
             "path": "cz-conventional-changelog"
         }
+    },
+    "engines": {
+        "node": ">=14.19.0"
     }
 }
